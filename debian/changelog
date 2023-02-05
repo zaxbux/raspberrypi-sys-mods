@@ -1,3 +1,9 @@
+raspberrypi-sys-mods (20230205) bullseye; urgency=medium
+
+  * Remove raspi-config and other services not required
+
+ -- Zachary Schneider <hello@zacharyschneider.ca>  Sun, 03 Feb 2023 13:50:00 +0700
+
 raspberrypi-sys-mods (20221019) bullseye; urgency=medium
 
   [ hungryhorace ]
