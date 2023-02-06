@@ -3,6 +3,16 @@
 if [ -c /dev/hwrng ]; then
   dd if=/dev/hwrng of=/dev/urandom count=1 bs=4096 status=none
 fi
+
+# Remove existing SSH host keys
 rm -f /etc/ssh/ssh_host_*_key*
-ssh-keygen -A > /dev/null
+
+# Generates all key types:
+#ssh-keygen -A > /dev/null
+
+# Generate only ED25519 host key
+ssh-keygen -t ed25519 -f ssh_host_ed25519_key -N "" < /dev/null
+# prevent untrusted key recreation with dpkg-reconfigure
+touch ssh_host_dsa_key ssh_host_ecdsa_key ssh_host_rsa_key
+
 systemctl -q disable regenerate_ssh_host_keys
