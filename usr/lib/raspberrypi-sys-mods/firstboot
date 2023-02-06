@@ -134,7 +134,7 @@ do_resize () {
     fi
   fi
 
-  whiptail --infobox "Resizing root filesystem...\n\nDepending on storage size and speed, this may take a while." 20 60
+  echo "Resizing root filesystem...\n\nDepending on storage size and speed, this may take a while."
   if [ "$NOOBS" = "1" ]; then
     if ! printf "resizepart %s\nyes\n%ss\n" "$EXT_PART_NUM" "$TARGET_END" | parted "$ROOT_DEV" ---pretend-input-tty; then
       FAIL_REASON="Extended partition resize failed\n$FAIL_REASON"
@@ -173,7 +173,6 @@ main () {
     do_resize
   fi
 
-  whiptail --infobox "Generating SSH keys..." 20 60
   regenerate_ssh_host_keys
 
   fix_partuuid
@@ -201,10 +200,10 @@ sync
 main
 
 if [ -z "$FAIL_REASON" ]; then
-  whiptail --infobox "Rebooting in 5 seconds..." 20 60
+  echo "Rebooting in 5 seconds..."
   sleep 5
 else
-  whiptail --msgbox "Failed running firstboot:\n${FAIL_REASON}" 20 60
+  echo "Failed running firstboot:\n${FAIL_REASON}"
 fi
 
 reboot_pi
