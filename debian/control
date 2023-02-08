@@ -1,4 +1,4 @@
-Source: raspberrypi-sys-mods
+Source: raspberrypi-sys-mods-lite
 Section: admin
 Priority: optional
 Maintainer: Serge Schneider <serge@raspberrypi.com>
@@ -8,10 +8,10 @@ Homepage: https://github.com/RPi-Distro/raspberrypi-sys-mods
 Vcs-Git: git://git@github.com:RPi-Distro/raspberrypi-sys-mods.git
 Vcs-Browser: https://github.com/RPi-Distro/raspberrypi-sys-mods
 
-Package: raspberrypi-sys-mods
+Package: raspberrypi-sys-mods-lite
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, systemd (>= 230), parted, fdisk
-Breaks: raspberrypi-ui-mods (<<1.20210706), dhcpcd5 (<<1:8.1.2-1+rpt2)
-Replaces: raspberrypi-ui-mods (<<1.20210706)
+Conflicts: raspberrypi-sys-mods
+Replaces: raspberrypi-sys-mods
 Description: System tweaks for the Raspberry Pi
  Various modifications to improve the performance or user experience.

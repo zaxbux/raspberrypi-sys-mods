@@ -1,8 +1,8 @@
-raspberrypi-sys-mods (20230205) bullseye; urgency=medium
+raspberrypi-sys-mods-lite (20230206) bullseye; urgency=medium
 
-  * Remove raspi-config and other services not required
+  * Trim unused modifications.
 
- -- Zachary Schneider <hello@zacharyschneider.ca>  Sun, 03 Feb 2023 13:50:00 +0700
+ -- Zachary Schneider <hello@zacharyschneider.ca>  Sun, 06 Feb 2023 15:00:00 -0700
 
 raspberrypi-sys-mods (20221019) bullseye; urgency=medium
 

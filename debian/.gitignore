@@ -3,4 +3,4 @@ files
 *.log
 *.debhelper
 *.substvars
-raspberrypi-sys-mods/
+raspberrypi-sys-mods-lite/

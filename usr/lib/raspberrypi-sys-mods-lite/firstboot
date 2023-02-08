@@ -160,7 +160,7 @@ do_resize () {
 
 regenerate_ssh_host_keys () {
   mount -o remount,rw /
-  /usr/lib/raspberrypi-sys-mods/regenerate_ssh_host_keys
+  /usr/lib/raspberrypi-sys-mods-lite/regenerate_ssh_host_keys
   RET="$?"
   mount -o remount,ro /
   return "$RET"
@@ -188,7 +188,7 @@ mkdir -p /run/systemd
 mount /boot
 mount / -o remount,ro
 
-sed -i 's| init=/usr/lib/raspberrypi-sys-mods/firstboot||' /boot/cmdline.txt
+sed -i 's| init=/usr/lib/raspberrypi-sys-mods-lite/firstboot||' /boot/cmdline.txt
 sed -i 's| sdhci\.debug_quirks2=4||' /boot/cmdline.txt
 
 if ! grep -q splash /boot/cmdline.txt; then

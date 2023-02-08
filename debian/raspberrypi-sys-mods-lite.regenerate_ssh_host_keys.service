@@ -5,7 +5,7 @@ ConditionFileIsExecutable=/usr/bin/ssh-keygen
 
 [Service]
 Type=oneshot
-ExecStart=/usr/lib/raspberrypi-sys-mods/regenerate_ssh_host_keys
+ExecStart=/usr/lib/raspberrypi-sys-mods-lite/regenerate_ssh_host_keys
 
 [Install]
 WantedBy=multi-user.target
